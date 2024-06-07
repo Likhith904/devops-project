@@ -3,19 +3,19 @@ pipeline{
     stages{
         stage('git checkout'){
             steps{
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ycetindil/Jenkins-Tetris.git']])
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'git@github.com:Likhith904/devops-project.git']])
             }
         }
         stage('build docker image'){
             steps{
-                sh 'docker build -t ycetindil.azurecr.io/tetris .'
+                sh 'docker build -t myproject18.azurecr.io/likhithdevopsproject .'
             }
         }
         stage('push image'){
             steps{
                 withCredentials([usernamePassword(credentialsId: 'ACR', passwordVariable: 'password', usernameVariable: 'username')]) {
-                sh 'docker login -u ${username} -p ${password} ycetindil.azurecr.io'
-                sh 'docker push ycetindil.azurecr.io/tetris'
+                sh 'docker login -u ${username} -p ${password} myproject18.azurecr.io'
+                sh 'docker push myproject18.azurecr.io/likhithdevopsproject'
                 }
             }
         }
