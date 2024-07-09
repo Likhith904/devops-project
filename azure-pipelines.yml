@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '19d38ab1-bc15-4df3-afaa-55e4014dfe31'
+  dockerRegistryServiceConnection: 'cc2f3544-80d0-4c78-aa21- c87e24392ed8'
   imageRepository: 'likhithdevopsproject'
   containerRegistry: 'myproject18.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'

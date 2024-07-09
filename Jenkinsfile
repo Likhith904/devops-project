@@ -9,6 +9,7 @@ pipeline{
         stage('build docker image'){
             steps{
                 sh 'docker build -t myproject18.azurecr.io/likhithdevopsproject .'
+                sh 'docker images'  // List images to verify build
             }
         }
         stage('push image'){
@@ -16,6 +17,7 @@ pipeline{
                 withCredentials([usernamePassword(credentialsId: 'ACR', passwordVariable: 'nOBfUH5Sq5Sy958/ImbxwutvlYXkAsw3heVIy1nBnu+ACRAU36eQ', usernameVariable: 'myproject18')]) {
                 sh 'docker login -u ${username} -p ${password} myproject18.azurecr.io'
                 sh 'docker push myproject18.azurecr.io/likhithdevopsproject'
+                sh 'docker rmi myproject18.azurecr.io/likhithdevopsproject'
                 }
             }
         }
@@ -37,6 +39,7 @@ pipeline{
                 withCredentials([usernamePassword(credentialsId: 'ACR', passwordVariable: 'nOBfUH5Sq5Sy958/ImbxwutvlYXkAsw3heVIy1nBnu+ACRAU36eQ', usernameVariable: 'myproject18')]) {
                 sh 'az webapp config container set --name 
 myproject18 --resource-group likhith --docker-custom-image-name myproject18.azurecr.io/likhithdevopsproject:latest --docker-registry-server-url https://myproject18.azurecr.io --docker-registry-server-user ${username} --docker-registry-server-password ${password}'
+                sh'az webapp restart --name tetris-gameapps --resource-group likhith'
                 }
             }
         }
