@@ -237,11 +237,11 @@ function drawGameOverScreen() {
 function drawMainMenu() {
   context.fillStyle = "#303040";
   context.fillRect(0, 0, canvas.width, canvas.height);
-  context.fillStyle = "green";
+  context.fillStyle = "pink";
   context.font = "32px Russo One";
   context.textAlign = "center";
   context.fillText(
-    "Lets Play the game by likhith..",
+    "Lets Play the tetris game..",
     canvas.width / 2,
     canvas.height / 2
   );
