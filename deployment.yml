@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: likhithdevopsproject
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: likhithdevopsproject
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: likhithdevopsproject
+    spec:
+      nodeSelector:
+        "kubernetes.io/os": linux
+      containers:
+      - name: likhithdevopsproject
+        image: myproject18.azurecr.io/likhithdevopsproject:latest
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+            memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: likhithdevopsproject
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: likhithdevopsproject
