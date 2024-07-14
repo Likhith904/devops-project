@@ -22,7 +22,8 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: likhithdevopsproject
-        image: myproject18.azurecr.io/likhithdevopsproject:${BUILD_ID}
+        image: myproject18.azurecr.io/likhithdevopsproject:${TAG}
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         resources:
