@@ -14,7 +14,7 @@ variables:
   imageRepository: 'likhithdevopsproject'
   containerRegistry: 'myproject18.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: "latest"
+  tag: '$(Build.BuildId)'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
