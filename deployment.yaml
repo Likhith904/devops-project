@@ -20,8 +20,8 @@ spec:
       nodeSelector:
         "kubernetes.io/os": linux
       containers:
-      - name: myproject18.azurecr.io
-        image: likhithdevopsproject:latest
+      - name: likhithdevopsproject
+        image: myproject18.azurecr.io/likhithdevopsproject:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
