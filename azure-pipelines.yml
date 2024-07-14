@@ -60,3 +60,5 @@ stages:
         containerRegistryType: 'Azure Container Registry'
         azureContainerRegistry: 'myproject18.azurecr.io'
         forceUpdate: false
+      env:
+        BUILD_ID: ${Build.BuildId}

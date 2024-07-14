@@ -23,7 +23,7 @@ spec:
       serviceAccountName: default
       containers:
       - name: likhithdevopsproject
-        image: myproject18.azurecr.io/likhithdevopsproject:latest
+        image: myproject18.azurecr.io/likhithdevopsproject:${BUILD_ID}
         imagePullPolicy: Always
         ports:
         - containerPort: 80
