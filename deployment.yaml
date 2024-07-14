@@ -16,9 +16,11 @@ spec:
     metadata:
       labels:
         app: likhithdevopsproject
-    spec:
+    
+    spec: 
       nodeSelector:
         "kubernetes.io/os": linux
+      serviceAccountName: default
       containers:
       - name: likhithdevopsproject
         image: myproject18.azurecr.io/likhithdevopsproject:latest
