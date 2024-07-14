@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: likhithdevopsproject
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: likhithdevopsproject
@@ -37,10 +37,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: likhithdevopsproject
+  name: likhithdevopsproject-service
 spec:
+  selector:
+    app: likhithdevopsproject
+
   type: LoadBalancer
   ports:
   - port: 80
-  selector:
-    app: likhithdevopsproject
+    protocol : "TCP"
+    targetPort: 80
+  
