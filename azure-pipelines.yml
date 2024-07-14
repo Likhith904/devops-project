@@ -14,7 +14,7 @@ variables:
   imageRepository: 'likhithdevopsproject'
   containerRegistry: 'myproject18.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '$(Build.BuildId)'
+  tag: "latest"
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -35,7 +35,7 @@ stages:
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: latest |
+        tags: |
           $(tag)
 - stage: DeployToAKS
   displayName: Deploy to AKS
