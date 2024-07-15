@@ -241,7 +241,7 @@ function drawMainMenu() {
   context.font = "32px Russo One";
   context.textAlign = "center";
   context.fillText(
-    "Lets Play the tetris..",
+    "Lets Play the tetris..by likhith",
     canvas.width / 2,
     canvas.height / 2
   );
