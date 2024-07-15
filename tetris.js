@@ -231,7 +231,7 @@ function drawGameOverScreen() {
   context.textAlign = "center";
   context.fillText("GameOver", canvas.width / 2, canvas.height / 2);
   context.font = "18px Russo One";
-  context.fillText("tetris.bsord.dev", canvas.width / 2, canvas.height / 1.8);
+  context.fillText("start again...", canvas.width / 2, canvas.height / 1.8);
 }
 
 function drawMainMenu() {
@@ -241,7 +241,7 @@ function drawMainMenu() {
   context.font = "32px Russo One";
   context.textAlign = "center";
   context.fillText(
-    "Lets Play the tetris.. azure",
+    "Lets Play the tetris..",
     canvas.width / 2,
     canvas.height / 2
   );

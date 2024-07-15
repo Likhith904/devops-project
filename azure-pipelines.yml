@@ -37,6 +37,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+          
 - stage: DeployToAKS
 
   displayName: Deploy to AKS
@@ -64,4 +65,3 @@ stages:
         containerRegistryType: 'Azure Container Registry'
         azureContainerRegistry: 'myproject18.azurecr.io'
         forceUpdate: true
-      
